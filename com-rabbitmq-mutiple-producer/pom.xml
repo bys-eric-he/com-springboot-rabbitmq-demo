@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.rabbitmq.mutiple.demo</groupId>
+        <artifactId>com-rabbitmq-mutiple-demo</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <!-- Maven默认为父模块是在当前子项目pom.xml所在的目录的上一级目录中,如果你的项目
+             结构并不是这样,你必须通过<relativePath>节点来指定你的父模块pom.xml所在的路径
+             节点默认値是../,所以当符合这个条件时,<relativePath>可以省略-->
+        <!-- <relativePath>../</relativePath> -->
+    </parent>
+
+    <groupId>com.rabbitmq.mutiple.producer</groupId>
+    <artifactId>com-rabbitmq-mutiple-producer</artifactId>
+    <packaging>jar</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <name>com-rabbitmq-mutiple-producer</name>
+    <description>RabbitMQ Provider Demo project for Spring Boot</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <!-- 依赖common模块 -->
+        <dependency>
+            <groupId>com.rabbitmq.mutiple.common</groupId>
+            <artifactId>com-rabbitmq-mutiple-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- 依赖consumer模块,这里的结构设计不合理, 生产者的模块不应该依赖消费者模块 -->
+        <dependency>
+            <groupId>com.rabbitmq.mutiple.consumer</groupId>
+            <artifactId>com-rabbitmq-mutiple-consumer</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.rabbitmq.mutiple.demo</groupId>
+        <artifactId>com-rabbitmq-mutiple-demo</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <!-- Maven默认为父模块是在当前子项目pom.xml所在的目录的上一级目录中,如果你的项目
+             结构并不是这样,你必须通过<relativePath>节点来指定你的父模块pom.xml所在的路径
+             节点默认値是../,所以当符合这个条件时,<relativePath>可以省略-->
+        <!-- <relativePath>../</relativePath> -->
+    </parent>
+
+    <groupId>com.rabbitmq.mutiple.common</groupId>
+    <artifactId>com-rabbitmq-mutiple-common</artifactId>
+    <packaging>jar</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <name>com-rabbitmq-mutiple-common</name>
+    <description>RabbitMQ Common Demo project for Spring Boot</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <!-- commons-lang3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.9</version>
+        </dependency>
+        <!--joda time-->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.10.5</version>
+        </dependency>
+        <!-- fasterxml.jackson.core -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
